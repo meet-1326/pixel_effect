@@ -66,5 +66,4 @@ public class AdapterEffect extends RecyclerView.Adapter<AdapterEffect.EffectHold
             front = itemView.findViewById(R.id.front);
         }
     }
-
 }

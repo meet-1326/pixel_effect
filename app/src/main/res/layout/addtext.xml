@@ -119,8 +119,8 @@
 
             <ImageView
                 android:id="@+id/iaddtext"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -136,6 +136,7 @@
                 android:layout_marginTop="5dp"
                 android:text="ADD TEXT"
                 android:textColor="#000000"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/iaddtext"
                 app:layout_constraintStart_toStartOf="@+id/iaddtext"
@@ -143,8 +144,8 @@
 
             <ImageView
                 android:id="@+id/isize"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
                 android:layout_marginTop="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -160,6 +161,7 @@
                 android:layout_marginTop="5dp"
                 android:text="SIZE"
                 android:textColor="#000000"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/isize"
                 app:layout_constraintHorizontal_bias="0.444"
@@ -169,8 +171,8 @@
 
             <ImageView
                 android:id="@+id/icolor"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="32dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -186,6 +188,7 @@
                 android:layout_marginTop="5dp"
                 android:text="COLOR"
                 android:textColor="#000000"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/icolor"
                 app:layout_constraintStart_toStartOf="@+id/icolor"
@@ -204,8 +207,8 @@
 
             <ImageView
                 android:id="@+id/istyle"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
                 android:layout_marginStart="32dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -221,6 +224,7 @@
                 android:layout_marginTop="5dp"
                 android:text="ADD TEXT"
                 android:textColor="#000000"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/istyle"
                 app:layout_constraintStart_toStartOf="@+id/istyle"
@@ -228,8 +232,8 @@
 
             <ImageView
                 android:id="@+id/ipattern"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -245,6 +249,7 @@
                 android:layout_marginTop="5dp"
                 android:text="SIZE"
                 android:textColor="#000000"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/ipattern"
                 app:layout_constraintStart_toStartOf="@+id/ipattern"
@@ -252,8 +257,8 @@
 
             <ImageView
                 android:id="@+id/iblur"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
                 android:layout_marginEnd="32dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -268,6 +273,7 @@
                 android:layout_marginTop="5dp"
                 android:text="COLOR"
                 android:textColor="#000000"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/iblur"
                 app:layout_constraintStart_toStartOf="@+id/iblur"
@@ -284,17 +290,20 @@
         android:layout_marginTop="16dp"
         android:text=""
         android:textColor="@color/white"
-        android:textSize="36sp"
+        android:textSize="26sp"
         android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
 
     <LinearLayout
+        android:id="@+id/lsize"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:background="@color/main"
+        android:orientation="vertical"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -306,26 +315,26 @@
                 android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="32dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:text="Size"
                 android:textColor="@color/white"
-                android:textSize="26dp"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/tvsizedone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="24dp"
+                android:layout_marginEnd="32dp"
                 android:layout_marginBottom="8dp"
                 android:text="Done"
                 android:textColor="@color/white"
-                android:textSize="26dp"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -333,12 +342,17 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <SeekBar
-            android:id="@+id/seekBar"
+            android:id="@+id/sbsize"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="24dp"
-            android:layout_marginRight="24dp"
-            android:layout_weight="1" />
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:progressBackgroundTint="#ACACAC"
+            android:progressTint="@color/white"
+            android:thumbTint="@color/white" />
 
     </LinearLayout>
 

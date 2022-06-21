@@ -1,5 +1,6 @@
 package com.raw.pixeleffect;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
@@ -15,6 +17,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,12 +41,13 @@ import java.util.List;
 
 public class edit extends AppCompatActivity {
 
-    LinearLayout btn3D,btneffect,btncolor,btnglare,btnfilter,btntext,btnsticker,btnrotate,btnflip;
+    LinearLayout btn3D,btneffect,btncolor,btnglare,btnfilter,btntext,btnsticker,btnrotate,btnflip,lsize;
     RecyclerView tdeffect,effect,glare,filter,sticker;
-    TextView tvcolor,maintext;
+    TextView tvcolor,maintext,tvsizedone;
     ImageView is1,is2,is3,is4,is5,is6,iaddtextdone,iaddtext,isize;
     EditText edaddtext;
     CardView cvaddtext;
+    SeekBar sbsize;
     public static Dialog dialog,dialog1;
     public static ImageView back_img,front_img;
 
@@ -177,7 +181,11 @@ public class edit extends AppCompatActivity {
                 iaddtext.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        cvaddtext.setVisibility(View.VISIBLE);
+                        if(smaintext == ""){
+                            Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move_up_size);
+                            cvaddtext.setVisibility(View.VISIBLE);
+                            cvaddtext.startAnimation(animation);
+                        }
                     }
                 });
                 iaddtextdone.setOnClickListener(new View.OnClickListener() {
@@ -190,12 +198,37 @@ public class edit extends AppCompatActivity {
                     }
                 });
                 isize.setOnClickListener(new View.OnClickListener() {
+                    @RequiresApi(api = Build.VERSION_CODES.O)
                     @Override
                     public void onClick(View v) {
-                        smaintext = edaddtext.getText().toString();
-                        cvaddtext.setVisibility(View.GONE);
-                        maintext.setText(smaintext);
-                        maintext.setVisibility(View.VISIBLE);
+                        sbsize.setProgress(26);
+                        sbsize.incrementProgressBy(1);
+                        sbsize.setMin(27);
+                        sbsize.setMax(76);
+                        Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move_up);
+                        lsize.setVisibility(View.VISIBLE);
+                        lsize.startAnimation(animation);
+                    }
+                });
+                tvsizedone.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        lsize.setVisibility(View.GONE);
+                    }
+                });
+                sbsize.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                    @Override
+                    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                        maintext.setTextSize(progress);
+                    }
+                    @Override
+                    public void onStartTrackingTouch(SeekBar seekBar) {
+
+                    }
+
+                    @Override
+                    public void onStopTrackingTouch(SeekBar seekBar) {
+
                     }
                 });
             }
@@ -311,6 +344,9 @@ public class edit extends AppCompatActivity {
         iaddtextdone = dialog1.findViewById(R.id.iaddtextdone);
         maintext = dialog1.findViewById(R.id.maintext);
         isize = dialog1.findViewById(R.id.isize);
+        sbsize = dialog1.findViewById(R.id.sbsize);
+        lsize = dialog1.findViewById(R.id.lsize);
+        tvsizedone = dialog1.findViewById(R.id.tvsizedone);
     }
 
     private void adddata() {
